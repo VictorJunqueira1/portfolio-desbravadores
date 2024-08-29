@@ -8,11 +8,10 @@ const HeroSection: React.FC = () => {
             <div className="relative min-h-screen flex items-center justify-center text-white">
                 <div
                     className="absolute inset-0 w-full h-full bg-fixed"
-                    style={{ backgroundImage: "url('/images/mountain.jpg')", backgroundPosition: 'center', backgroundSize: 'cover' }}
-                ></div>
+                    style={{ backgroundImage: "url('/images/mountain.jpg')", backgroundPosition: 'center', backgroundSize: 'cover' }}>
+                </div>
                 {/* Sobreposição */}
                 <div className="absolute inset-0 bg-black opacity-30"></div>
-
                 {/* Conteúdo */}
                 <div className="relative z-10 text-center px-6">
                     <h1 className="text-4xl md:text-6xl font-bold">Home Adventure</h1>

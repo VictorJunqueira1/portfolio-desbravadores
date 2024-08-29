@@ -40,19 +40,20 @@ export const NavigationMenuMain = () => {
     return (
         <div>
             {/* Mobile Menu */}
-            <div className="block lg:hidden">
+            <div className="flex items-center justify-between px-4 py-2 bg-white shadow-md lg:hidden">
+                <Link href="/" className="text-xl font-bold text-gray-900">
+                    Home Adventure
+                </Link>
                 <Sheet>
                     <SheetTrigger>
-                        <span className="text-lg font-semibold p-3">
-                            <Menu size={24} />
+                        <span className="p-3">
+                            <Menu size={24} className="text-gray-900" />
                         </span>
                     </SheetTrigger>
-                    <SheetContent>
+                    <SheetContent className="max-h-screen overflow-y-auto">
                         <SheetHeader>
                             <SheetTitle>Menu</SheetTitle>
                         </SheetHeader>
-
-                        {/* Componentes Mobile */}
                         <div className="mt-4 space-y-4">
                             {components.map((component) => (
                                 <Link
@@ -65,8 +66,6 @@ export const NavigationMenuMain = () => {
                                 </Link>
                             ))}
                         </div>
-
-                        {/* Pathfinder Mobile */}
                         <div className="mt-6 space-y-4">
                             {pathfinder.map((item) => (
                                 <Link
@@ -150,7 +149,7 @@ const ListItem = React.forwardRef<HTMLAnchorElement, React.AnchorHTMLAttributes<
                     <a
                         ref={ref}
                         className={cn(
-                            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+                            "block select-none space-y-1 rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
                             className
                         )}
                         {...props}
