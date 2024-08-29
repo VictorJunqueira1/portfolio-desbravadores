@@ -1,6 +1,7 @@
 import React from 'react';
 import { FlameKindling, Footprints, TentTree } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const HeroSection: React.FC = () => {
     return (
@@ -27,19 +28,19 @@ const HeroSection: React.FC = () => {
                 {/* Ícones */}
                 <div className="mt-8 flex justify-center space-x-4">
                     <div className="p-4 bg-gray-700 rounded-md hover:bg-orange-600 duration-300">
-                        <TentTree className="w-8 h-8 text-white" />
+                        <TentTree className="w-12 h-12 text-white" />
                     </div>
                     <div className="p-4 bg-gray-700 rounded-md hover:bg-orange-600 duration-300">
-                        <FlameKindling className="w-8 h-8 text-white" />
+                        <FlameKindling className="w-12 h-12 text-white" />
                     </div>
                     <div className="p-4 bg-gray-700 rounded-md hover:bg-orange-600 duration-300">
-                        <Footprints className="w-8 h-8 text-white" />
+                        <Footprints className="w-12 h-12 text-white" />
                     </div>
                 </div>
 
                 {/* Botão */}
                 <button className="mt-8 px-6 py-3 bg-orange-500 text-lg font-semibold rounded-md shadow-md">
-                    Comece Agora
+                    <Link href={"http://avisoshome.vercel.app"} /> Ver próximos eventos
                 </button>
             </div>
         </div>

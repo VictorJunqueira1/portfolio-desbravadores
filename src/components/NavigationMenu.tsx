@@ -3,6 +3,7 @@
 import * as React from "react"
 import Link from "next/link"
 import Image from "next/image"
+import { Menu } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import {
@@ -17,7 +18,6 @@ import {
 import {
     Sheet,
     SheetContent,
-    SheetDescription,
     SheetHeader,
     SheetTitle,
     SheetTrigger,
@@ -42,15 +42,43 @@ export const NavigationMenuMain = () => {
             {/* Mobile Menu */}
             <div className="block lg:hidden">
                 <Sheet>
-                    <SheetTrigger>Open</SheetTrigger>
+                    <SheetTrigger>
+                        <span className="text-lg font-semibold p-3">
+                            <Menu size={24} />
+                        </span>
+                    </SheetTrigger>
                     <SheetContent>
                         <SheetHeader>
-                            <SheetTitle>Are you absolutely sure?</SheetTitle>
-                            <SheetDescription>
-                                This action cannot be undone. This will permanently delete your account
-                                and remove your data from our servers.
-                            </SheetDescription>
+                            <SheetTitle>Menu</SheetTitle>
                         </SheetHeader>
+
+                        {/* Componentes Mobile */}
+                        <div className="mt-4 space-y-4">
+                            {components.map((component) => (
+                                <Link
+                                    key={component.title}
+                                    href={component.href}
+                                    className="block p-3 text-lg font-semibold text-gray-700 hover:bg-gray-100 rounded-md"
+                                >
+                                    {component.title}
+                                    <p className="text-sm text-gray-500">{component.description}</p>
+                                </Link>
+                            ))}
+                        </div>
+
+                        {/* Pathfinder Mobile */}
+                        <div className="mt-6 space-y-4">
+                            {pathfinder.map((item) => (
+                                <Link
+                                    key={item.title}
+                                    href={item.href}
+                                    className="block p-3 text-lg font-semibold text-gray-700 hover:bg-gray-100 rounded-md"
+                                >
+                                    {item.title}
+                                    <p className="text-sm text-gray-500">{item.description}</p>
+                                </Link>
+                            ))}
+                        </div>
                     </SheetContent>
                 </Sheet>
             </div>
