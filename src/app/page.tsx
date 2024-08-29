@@ -12,7 +12,7 @@ function Page() {
         </div>
         <HeroSection />
         <div className="h-[1000px]">
-
+          ...
         </div>
       </div>
     </>
