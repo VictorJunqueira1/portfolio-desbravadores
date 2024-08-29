@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
 import HeroSection from "@/components/HeroSection";
 import { NavigationMenuMain } from "@/components/NavigationMenu";
 
-export const Page = () => {
+function Page() {
   return (
     <>
       <div className="bg-white min-h-screen">
@@ -16,7 +16,7 @@ export const Page = () => {
         </div>
       </div>
     </>
-  )
+  );
 }
 
 export default Page;
