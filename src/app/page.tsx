@@ -1,5 +1,6 @@
 "use client"
 
+import HeroSection from "@/components/HeroSection";
 import { NavigationMenuMain } from "@/components/NavigationMenu";
 
 export const Page = () => {
@@ -7,8 +8,9 @@ export const Page = () => {
     <>
       <div className="bg-white min-h-screen">
         <div className="mx-auto max-w-7xl">
-            <NavigationMenuMain />
+          <NavigationMenuMain />
         </div>
+        <HeroSection />
       </div>
     </>
   )
