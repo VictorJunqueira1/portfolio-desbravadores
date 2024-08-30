@@ -1,5 +1,6 @@
 "use client";
 
+import AdventureSection from "@/components/AdventureSection";
 import HeroSection from "@/components/HeroSection";
 import { NavigationMenuMain } from "@/components/NavigationMenu";
 
@@ -7,13 +8,17 @@ function Page() {
   return (
     <>
       <div className="bg-white min-h-screen">
-        <div className="mx-auto max-w-7xl">
+        <header className="mx-auto max-w-7xl">
           <NavigationMenuMain />
-        </div>
+        </header>
         <HeroSection />
-        <div className="h-[1000px]">
-          ...
-        </div>
+        <AdventureSection
+          title="Venha para a Aventura"
+          subtitle="Sua porta de entrada para a aventura"
+          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique impedit doloribus numquam voluptatem. Quidem debitis, ad maxime, commodi reiciendis sequi consequuntur odit assumenda quo et molestiae optio aperiam delectus eaque!"
+          foundationDate={new Date('2019-12-01')}
+          image={<img src="/images/mountain.jpg" alt="Descrição da Imagem" />}
+        />
       </div>
     </>
   );
