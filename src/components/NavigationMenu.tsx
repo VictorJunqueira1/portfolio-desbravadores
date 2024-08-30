@@ -128,7 +128,7 @@ export const NavigationMenuMain = () => {
                             </NavigationMenuContent>
                         </NavigationMenuItem>
                         <NavigationMenuItem>
-                            <Link href="http://avisoshome.vercel.app" legacyBehavior passHref>
+                            <Link href="http://eventos-homeadventure.vercel.app" legacyBehavior passHref>
                                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                     Próximos Eventos
                                 </NavigationMenuLink>

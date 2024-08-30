@@ -5,7 +5,7 @@ import Link from 'next/link';
 const HeroSection: React.FC = () => {
     return (
         <>
-            <div className="relative min-h-screen flex items-center justify-center text-white">
+            <div className="relative min-h-screen flex items-center justify-center text-white py-12 md:py-0">
                 <div
                     className="absolute inset-0 w-full h-full bg-fixed"
                     style={{ backgroundImage: "url('/images/mountain.jpg')", backgroundPosition: 'center', backgroundSize: 'cover' }}>
@@ -25,20 +25,20 @@ const HeroSection: React.FC = () => {
 
                     {/* Ícones */}
                     <div className="mt-8 flex justify-center space-x-4">
-                        <div className="p-4 bg-gray-700 rounded-md hover:bg-orange-600 duration-300 hover:scale-110">
-                            <TentTree className="w-12 h-12 text-white" />
+                        <div className="p-4 bg-slate-800 rounded-md hover:bg-orange-600 duration-300 hover:scale-110">
+                            <TentTree className="w-8 h-8 md:w-12 md:h-12 text-white" />
                         </div>
-                        <div className="p-4 bg-gray-700 rounded-md hover:bg-orange-600 duration-300 hover:scale-110">
-                            <FlameKindling className="w-12 h-12 text-white" />
+                        <div className="p-4 bg-slate-800 rounded-md hover:bg-orange-600 duration-300 hover:scale-110">
+                            <FlameKindling className="w-8 h-8 md:w-12 md:h-12 text-white" />
                         </div>
-                        <div className="p-4 bg-gray-700 rounded-md hover:bg-orange-600 duration-300 hover:scale-110">
-                            <Footprints className="w-12 h-12 text-white" />
+                        <div className="p-4 bg-slate-800 rounded-md hover:bg-orange-600 duration-300 hover:scale-110">
+                            <Footprints className="w-8 h-8 md:w-12 md:h-12 text-white" />
                         </div>
                     </div>
 
                     {/* Link */}
-                    <Link href="http://avisoshome.vercel.app">
-                        <div className='mt-8 px-6 py-3 bg-orange-500 text-lg font-semibold rounded-md shadow-md inline-block'>
+                    <Link href="http://eventos-homeadventure.vercel.app">
+                        <div className='mt-8 px-6 py-3 bg-orange-600 hover:bg-orange-500 duration-300 text-lg font-semibold rounded-md shadow-md inline-block'>
                             Ver próximos eventos
                         </div>
                     </Link>
