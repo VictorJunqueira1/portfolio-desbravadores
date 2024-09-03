@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { Progress } from '@/components/ui/progress';
 
 interface AdventureSectionProps {
     title: string;
@@ -14,23 +13,23 @@ interface AdventureSectionProps {
 const AdventureSection: React.FC<AdventureSectionProps> = ({ title, subtitle, description, image, foundationDate }) => {
     const [years, setYears] = useState<number>(0);
     const [progress, setProgress] = useState<number[]>([0, 0, 0]);
+    const [currentTopic, setCurrentTopic] = useState<number>(0);
     const topics = ["Aventura", "Diretoria", "Amizades"];
 
+    // Effect for calculating and updating years
     useEffect(() => {
-        if (!foundationDate) {
-            console.error("Foundation date is not provided.");
+        if (!(foundationDate instanceof Date) || isNaN(foundationDate.getTime())) {
+            console.error("Invalid foundation date.");
             return;
         }
 
         const calculateYears = () => {
             const now = new Date();
-            const currentYear = now.getFullYear();
-            const foundationYear = foundationDate.getFullYear();
-            return currentYear - foundationYear;
+            return now.getFullYear() - foundationDate.getFullYear();
         };
 
         const end = calculateYears();
-        const incrementTime = 500; // Intervalo de atualização
+        const incrementTime = 50;
 
         const increment = () => {
             setYears(prevYears => {
@@ -42,71 +41,92 @@ const AdventureSection: React.FC<AdventureSectionProps> = ({ title, subtitle, de
         };
 
         const timer = setInterval(increment, incrementTime);
-
         return () => clearInterval(timer);
     }, [foundationDate]);
 
+    // Effect for animating progress bars
     useEffect(() => {
         const animateProgress = () => {
-            const duration = 10000;
-            const intervalTime = 1000;
+            const duration = 600000; // 10 minutes
+            const intervalTime = 50;
+            const incrementValue = 100 * (intervalTime / duration);
 
             const increment = (index: number) => {
                 setProgress(prevProgress => {
                     const newProgress = [...prevProgress];
-                    if (newProgress[index] < 100) {
-                        newProgress[index] = Math.min(newProgress[index] + 1, 100);
+                    if (newProgress[index] < 94) {
+                        newProgress[index] = Math.min(newProgress[index] + incrementValue, 100);
                     }
                     return newProgress;
                 });
             };
 
-            const timers = topics.map((_, index) => setInterval(() => increment(index), intervalTime));
+            const updateProgress = () => {
+                const nextTopic = (currentTopic + 1) % topics.length;
+                setCurrentTopic(nextTopic);
+                const startTime = Date.now();
 
-            setTimeout(() => timers.forEach(timer => clearInterval(timer)), duration);
+                const timer = setInterval(() => {
+                    if (Date.now() - startTime < duration) {
+                        increment(currentTopic);
+                    } else {
+                        clearInterval(timer);
+                        if (nextTopic !== 0) {
+                            updateProgress();
+                        }
+                    }
+                }, intervalTime);
+            };
+
+            updateProgress();
         };
 
         animateProgress();
-    }, [topics]);
+    }, [currentTopic, topics]);
 
     return (
-        <div className='min-h-screen bg-white mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8'>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="space-y-4">
-                    <h3 className="text-xl font-semibold text-orange-600">{title}</h3>
-                    <h1 className="text-3xl font-semibold">{subtitle}</h1>
-                    <p className="text-sm">{description}</p>
-                    <div className="flex items-center space-x-4">
-                        <div className="bg-black text-white rounded-md w-32 h-32 flex items-center justify-center text-4xl font-bold">
-                            {years}+
+        <div className='min-h-screen bg-white mx-auto max-w-[1400px] px-4 py-24 sm:px-6 lg:px-8'>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div className="space-y-12">
+                    <h3 className="text-2xl font-semibold text-orange-600">{title}</h3>
+                    <h1 className="text-5xl font-extrabold text-gray-900">{subtitle}</h1>
+                    <p className="text-lg text-gray-700">{description}</p>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div className="bg-black text-white rounded-md flex flex-col items-center justify-center p-8">
+                            <div className="text-6xl font-bold flex items-center">
+                                {years}
+                                <span className="text-orange-600 text-3xl ml-2">+</span>
+                            </div>
+                            <div className="text-xl mt-2">anos de Experiência</div> 
                         </div>
-                        <article className="text-xl font-medium">
-                            anos de Experiência
-                        </article>
-                    </div>
-                    <div className="mt-8 flex flex-col space-y-4">
-                        <div className="flex flex-col space-y-2">
+                        <article className="space-y-8"> 
                             {topics.map((topic, index) => (
-                                <div key={index} className="flex items-center space-x-4">
+                                <div key={index} className="flex flex-col-reverse">
                                     <div className="flex-1">
-                                        <Progress
-                                            value={progress[index]}
-                                            className="w-full h-4 bg-gray-200 rounded-full"
-                                        />
+                                        <div className="relative w-full h-3 bg-gray-200 rounded-full">
+                                            <div
+                                                className="absolute top-0 left-0 h-full bg-orange-600 rounded-full"
+                                                style={{ width: `${progress[index]}%` }}
+                                            ></div>
+                                        </div>
                                     </div>
-                                    <div className="text-xl font-bold ml-4">
-                                        {progress[index]}%
-                                    </div>
-                                    <div className="text-lg ml-2">
-                                        {topic}
+                                    <div className='w-full flex items-center justify-between'>
+                                        <div className="text-lg">
+                                            {topic}
+                                        </div>
+                                        <div className="text-2xl font-bold">
+                                            {Math.round(progress[index])}%
+                                        </div>
                                     </div>
                                 </div>
                             ))}
-                        </div>
+                        </article>
                     </div>
                 </div>
-                <div className="flex items-center justify-center">
-                    {image}
+                <div className="flex items-end justify-end col-span-1 lg:col-span-1">
+                    <div className="w-full h-full flex items-end justify-end overflow-hidden rounded-md">
+                        {image}
+                    </div>
                 </div>
             </div>
         </div>
