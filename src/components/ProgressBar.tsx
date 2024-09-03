@@ -25,7 +25,7 @@ export const ProgressBar = () => {
     ];
 
     return (
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-6">
             {topics.map((topic, index) => (
                 <div key={index} className="flex flex-col justify-between gap-1">
                     <div className="flex justify-between">

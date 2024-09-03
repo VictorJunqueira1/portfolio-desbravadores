@@ -63,13 +63,13 @@ const AdventureSection: React.FC<AdventureSectionProps> = ({ title, subtitle, de
                             </div>
                             <div className="text-xl mt-2">anos de Experiência</div>
                         </div>
-                        <article className="space-y-8">
+                        <article>
                             <ProgressBar />
                         </article>
                     </div>
                 </div>
                 <div className="flex items-end justify-end col-span-1 xl:col-span-1">
-                    <div className="w-full h-full flex items-end justify-end overflow-hidden rounded-md">
+                    <div className="w-full h-full flex items-end justify-end overflow-hidden">
                         {image}
                     </div>
                 </div>
