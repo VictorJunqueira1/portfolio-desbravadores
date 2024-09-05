@@ -49,7 +49,7 @@ const AdventureSection: React.FC<AdventureSectionProps> = ({ title, subtitle, de
     }, [foundationDate]);
 
     return (
-        <div className='min-h-screen bg-white mx-auto max-w-[1400px] px-4 py-24 sm:px-6 lg:px-8'>
+        <div className='h-full bg-white mx-auto max-w-[1400px] px-4 py-24 sm:px-6 lg:px-8'>
             <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
                 <div className="space-y-12">
                     <h3 className="text-2xl font-semibold text-orange-600">{title}</h3>
