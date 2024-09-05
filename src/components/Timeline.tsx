@@ -25,7 +25,7 @@ const defaultTimelineItems: TimelineItem[] = [
         body: "Em dezembro de 2019, o clube Home Adventure foi fundado com o objetivo de proporcionar experiências enriquecedoras e aventuras inesquecíveis. O início foi promissor e a comunidade estava empolgada com o novo projeto.",
         buttonLabel: "Saiba Mais",
         buttonColor: "gray",
-        buttonIcon: <ArrowRight className="ml-2 h-3 w-3" />
+        buttonIcon: <ArrowRight className="h-4 w-4" />
     },
     {
         time: "Dez - 2019",
@@ -67,12 +67,19 @@ export function Timeline({ items = defaultTimelineItems }: TimelineProps) {
                             </div>
                             <FlowbiteTimeline.Content className="text-gray-800 p-4 rounded-lg">
                                 <FlowbiteTimeline.Time className="text-gray-600">{item.time}</FlowbiteTimeline.Time>
-                                <FlowbiteTimeline.Title className="text-xl font-semibold text-blue-700">{item.title}</FlowbiteTimeline.Title>
+                                <FlowbiteTimeline.Title className="text-xl font-semibold">{item.title}</FlowbiteTimeline.Title>
                                 <FlowbiteTimeline.Body className="text-gray-700">{item.body}</FlowbiteTimeline.Body>
                                 {item.buttonLabel && item.buttonColor && (
-                                    <Button color={item.buttonColor} className="mt-2 bg-blue-500 text-white hover:bg-blue-600">
+                                    <Button
+                                        color={item.buttonColor}
+                                        className="mt-2 flex items-center justify-center bg-orange-500 text-white hover:bg-orange-600"
+                                    >
                                         {item.buttonLabel}
-                                        {item.buttonIcon && <span className="ml-2 h-3 w-3">{item.buttonIcon}</span>}
+                                        {item.buttonIcon && (
+                                            <span className="ml-2 flex items-center justify-center">
+                                                {item.buttonIcon}
+                                            </span>
+                                        )}
                                     </Button>
                                 )}
                             </FlowbiteTimeline.Content>
