@@ -22,26 +22,17 @@ const defaultTimelineItems: TimelineItem[] = [
     {
         time: "Dez - 2019",
         title: "Fundação do Home Adventure",
-        body: "Em dezembro de 2019, o clube Home Adventure foi fundado com o objetivo de proporcionar experiências enriquecedoras e aventuras inesquecíveis. O início foi promissor e a comunidade estava empolgada com o novo projeto.",
-        buttonLabel: "Saiba Mais",
-        buttonColor: "gray",
-        buttonIcon: <ArrowRight className="h-4 w-4" />
-    },
-    {
-        time: "Dez - 2019",
-        title: "Fundação do Home Adventure",
-        body: "Em dezembro de 2019, o clube Home Adventure foi fundado com o objetivo de proporcionar experiências enriquecedoras e aventuras inesquecíveis. O início foi promissor e a comunidade estava empolgada com o novo projeto.",
-        buttonLabel: "Saiba Mais",
+        body: "Com a visão de proporcionar uma experiência de aprendizado, espiritualidade e aventura, o Clube Home Adventure foi fundado. Desde o início, o clube atraiu crianças, adolescentes e suas famílias, que estavam ansiosos por fazer parte desse novo movimento.",
     },
     {
         time: "2020 - 2021",
-        title: "Desafios Durante a Pandemia",
-        body: "Durante os anos de 2020 e 2021, o Home Adventure enfrentou grandes desafios devido à pandemia. Apesar das dificuldades e das restrições, o clube se adaptou e continuou a oferecer atividades e suporte aos seus membros, mantendo a união e o espírito de aventura.",
+        title: "Superando os Desafios da Pandemia",
+        body: "A pandemia trouxe enormes desafios para o clube. As atividades presenciais foram suspensas, mas o Home Adventure se reinventou. Adotamos reuniões online, atividades remotas e o contato virtual para manter o espírito de aventura e comunhão entre os membros.",
     },
     {
         time: "2022 - Presente",
         title: "Superação e Crescimento",
-        body: "Após os desafios da pandemia, o Home Adventure se reergueu com mais força. Hoje, é o maior clube de Mogi Guaçu, com um total de 80 membros. O clube continua a se destacar pela sua dedicação à comunhão com Deus e ao fortalecimento da comunidade.",
+        body: "Com o fim das restrições, o Home Adventure voltou com força total. Hoje, o clube é o maior de Mogi Guaçu, com mais de 80 membros ativos. Continuamos a promover atividades que fortalecem a fé, o companheirismo e o desenvolvimento de cada criança e adolescente que participa.",
     }
 ];
 
