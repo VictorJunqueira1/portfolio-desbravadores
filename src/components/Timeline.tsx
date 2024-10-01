@@ -36,13 +36,16 @@ const defaultTimelineItems: TimelineItem[] = [
 ];
 
 export function Timeline({ items = defaultTimelineItems }: TimelineProps) {
-    // Cria um array de referências para os itens
-    const refs = items.map(() => useInView({ triggerOnce: true, threshold: 0.1 }));
+    // Usar um array de referências para os itens
+    const itemRefs = Array.from({ length: items.length }, () => useInView({
+        triggerOnce: true,
+        threshold: 0.1,
+    }));
 
     return (
         <FlowbiteTimeline horizontal>
             {items.map((item, index) => {
-                const { ref, inView } = refs[index]; // Usa a referência correspondente a cada item
+                const { ref, inView } = itemRefs[index]; // Obter a referência correspondente
 
                 return (
                     <motion.div
