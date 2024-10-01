@@ -1,7 +1,6 @@
 "use client";
 
 import { Button, Timeline as FlowbiteTimeline } from "flowbite-react";
-import { ArrowRight, Calendar } from "lucide-react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -17,6 +16,13 @@ interface TimelineItem {
 interface TimelineProps {
     items?: TimelineItem[];
 }
+
+const useTimelineItemInView = () => {
+    return useInView({
+        triggerOnce: true,
+        threshold: 0.1,
+    });
+};
 
 const defaultTimelineItems: TimelineItem[] = [
     {
@@ -40,11 +46,8 @@ export function Timeline({ items = defaultTimelineItems }: TimelineProps) {
     return (
         <FlowbiteTimeline horizontal>
             {items.map((item, index) => {
-                const { ref, inView } = useInView({
-                    triggerOnce: true,
-                    threshold: 0.1,
-                });
-                
+                const { ref, inView } = useTimelineItemInView();
+
                 return (
                     <motion.div
                         key={index}
@@ -55,7 +58,7 @@ export function Timeline({ items = defaultTimelineItems }: TimelineProps) {
                     >
                         <FlowbiteTimeline.Item>
                             <div className="relative">
-                                <FlowbiteTimeline.Point className="bg-blue-500 text-white" icon={Calendar} />
+                                <FlowbiteTimeline.Point className="bg-blue-500 text-white" />
                             </div>
                             <FlowbiteTimeline.Content className="text-gray-800 p-4 rounded-lg">
                                 <FlowbiteTimeline.Time className="text-gray-600">{item.time}</FlowbiteTimeline.Time>
