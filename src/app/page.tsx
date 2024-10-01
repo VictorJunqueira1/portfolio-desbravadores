@@ -6,6 +6,7 @@ import HeroSection from "@/components/HeroSection";
 import { NavigationMenuMain } from "@/components/NavigationMenu";
 import { Timeline } from "@/components/Timeline";
 import Widget from "@/components/Widget";
+import FooterMain from "@/components/Footer";
 import Image from "next/image";
 
 const Page = () => {
@@ -27,6 +28,7 @@ const Page = () => {
           <Timeline />
           <Widget />
           <FAQ />
+          <FooterMain />
         </div>
       </div>
     </>
