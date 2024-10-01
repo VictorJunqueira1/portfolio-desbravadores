@@ -37,46 +37,48 @@ const defaultTimelineItems: TimelineItem[] = [
 ];
 
 export function Timeline({ items = defaultTimelineItems }: TimelineProps) {
-    const { ref, inView } = useInView({
-        triggerOnce: true,
-        threshold: 0.9,
-    });
-
     return (
         <FlowbiteTimeline horizontal>
-            {items.map((item, index) => (
-                <motion.div
-                    key={index}
-                    ref={ref}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
-                    transition={{ duration: 0.9, delay: index * 0.2 }}
-                >
-                    <FlowbiteTimeline.Item>
-                        <div className="relative">
-                            <FlowbiteTimeline.Point className="bg-blue-500 text-white" icon={Calendar} />
-                        </div>
-                        <FlowbiteTimeline.Content className="text-gray-800 p-4 rounded-lg">
-                            <FlowbiteTimeline.Time className="text-gray-600">{item.time}</FlowbiteTimeline.Time>
-                            <FlowbiteTimeline.Title className="text-xl font-semibold">{item.title}</FlowbiteTimeline.Title>
-                            <FlowbiteTimeline.Body className="text-gray-700">{item.body}</FlowbiteTimeline.Body>
-                            {item.buttonLabel && item.buttonColor && (
-                                <Button
-                                    color={item.buttonColor}
-                                    className="mt-2 flex items-center justify-center bg-orange-500 text-white hover:bg-orange-600"
-                                >
-                                    {item.buttonLabel}
-                                    {item.buttonIcon && (
-                                        <span className="ml-2 flex items-center justify-center">
-                                            {item.buttonIcon}
-                                        </span>
-                                    )}
-                                </Button>
-                            )}
-                        </FlowbiteTimeline.Content>
-                    </FlowbiteTimeline.Item>
-                </motion.div>
-            ))}
+            {items.map((item, index) => {
+                const { ref, inView } = useInView({
+                    triggerOnce: true,
+                    threshold: 0.1,
+                });
+                
+                return (
+                    <motion.div
+                        key={index}
+                        ref={ref}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
+                        transition={{ duration: 0.9, delay: index * 0.2 }}
+                    >
+                        <FlowbiteTimeline.Item>
+                            <div className="relative">
+                                <FlowbiteTimeline.Point className="bg-blue-500 text-white" icon={Calendar} />
+                            </div>
+                            <FlowbiteTimeline.Content className="text-gray-800 p-4 rounded-lg">
+                                <FlowbiteTimeline.Time className="text-gray-600">{item.time}</FlowbiteTimeline.Time>
+                                <FlowbiteTimeline.Title className="text-xl font-semibold">{item.title}</FlowbiteTimeline.Title>
+                                <FlowbiteTimeline.Body className="text-gray-700">{item.body}</FlowbiteTimeline.Body>
+                                {item.buttonLabel && item.buttonColor && (
+                                    <Button
+                                        color={item.buttonColor}
+                                        className="mt-2 flex items-center justify-center bg-orange-500 text-white hover:bg-orange-600"
+                                    >
+                                        {item.buttonLabel}
+                                        {item.buttonIcon && (
+                                            <span className="ml-2 flex items-center justify-center">
+                                                {item.buttonIcon}
+                                            </span>
+                                        )}
+                                    </Button>
+                                )}
+                            </FlowbiteTimeline.Content>
+                        </FlowbiteTimeline.Item>
+                    </motion.div>
+                );
+            })}
         </FlowbiteTimeline>
     );
 }

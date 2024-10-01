@@ -1,10 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
-import { Check } from 'lucide-react';
 
-interface WidgetProps { }
-
-const Widget: React.FC<WidgetProps> = () => {
+const Widget = () => {
     return (
         <div className="container mx-auto px-4 py-8 flex flex-col md:flex-row">
             {/* Coluna da imagem */}
@@ -40,7 +37,7 @@ const Widget: React.FC<WidgetProps> = () => {
             {/* Texto sobre os Desbravadores */}
             <div className="md:w-1/2 md:pl-8 mt-6 md:mt-0">
                 <h3 className="text-primary text-base font-semibold uppercase mb-2 text-orange-600">Por que escolher o clube de Desbravadores?</h3>
-                <h2 className="text-5xl font-bold mb-4">Transformando a vida das crianças e adolescentes</h2>
+                <h2 className="text-4xl md:text-5xl font-bold mb-4">Transformando a vida das crianças e adolescentes</h2>
                 <p className="text-muted-foreground mb-4">
                     O Clube de Desbravadores é uma oportunidade incrível para o desenvolvimento físico, mental, social e espiritual dos jovens. Aqui, eles aprendem a lidar com desafios, desenvolvem habilidades práticas e constroem valores para a vida toda.
                 </p>
