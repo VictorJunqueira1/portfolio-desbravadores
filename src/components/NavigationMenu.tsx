@@ -23,16 +23,17 @@ import {
 } from "@/components/ui/sheet"
 
 const components = [
-    { title: "Início", href: "/", description: "Volte ao início da página." },
-    { title: "Sobre", href: "/about", description: "Conheça mais sobre a história do clube." },
-    { title: "Galeria", href: "/galery", description: "Confira fotos dos momentos mais marcantes vividos do nosso clube." },
-    { title: "Contato", href: "/contact", description: "Entre em contato com um de nossos diretores." }
+    { title: "Início", href: "#home", description: "Volte ao início da página." },
+    { title: "Sobre", href: "#about", description: "Conheça mais sobre a história do clube." },
+    { title: "Galeria", href: "#galery", description: "Confira fotos dos momentos mais marcantes vividos do nosso clube." },
+    { title: "Contato", href: "#contact", description: "Entre em contato com um de nossos diretores." }
 ]
 
 const pathfinder = [
     { title: "Notícias", href: "https://noticias.adventistas.org/pt/departamento/desbravadores/", description: "Confira as últimas notícias dos Desbravadores." },
     { title: "Encontre um Clube", href: "https://clubes.adventistas.org/br/", description: "Encontre um clube mais próximo a você." },
-    { title: "Aplicativo", href: "https://www.adventistas.org/pt/desbravadores/aplicativo-oficial-dos-desbravadores/", description: "Obtenha o aplicativo dos desbravadores." }
+    { title: "Aplicativo", href: "https://www.adventistas.org/pt/desbravadores/aplicativo-oficial-dos-desbravadores/", description: "Obtenha o aplicativo dos desbravadores." },
+    { title: "Perguntas Frequentes", href: "#faq", description: "Veja se sua dúvida está aqui." }
 ]
 
 export const NavigationMenuMain = () => {

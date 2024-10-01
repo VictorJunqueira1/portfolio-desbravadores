@@ -10,7 +10,7 @@ const HeroSection: React.FC = () => {
                     className="absolute inset-0 w-full h-full bg-fixed"
                     style={{ backgroundImage: "url('/images/mountain.jpg')", backgroundPosition: 'center', backgroundSize: 'cover' }}>
                 </div>
-                <div className="absolute inset-0 bg-black opacity-30"></div>
+                <div className="absolute inset-0 bg-black opacity-50"></div>
                 <div className="relative z-10 text-center px-6">
                     <h1 className="text-4xl md:text-6xl font-bold">Home Adventure</h1>
                     <div className="mt-4 text-lg max-w-xl mx-auto">

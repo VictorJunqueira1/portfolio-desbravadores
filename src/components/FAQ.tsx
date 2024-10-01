@@ -41,7 +41,7 @@ const faqItems: FAQItem[] = [
 
 export default function Widget() {
     return (
-        <div className="flex flex-col lg:flex-row p-4 md:p-6 lg:p-8 bg-background space-y-6 lg:space-y-0 lg:space-x-8">
+        <div className="flex flex-col lg:flex-row p-4 md:p-6 lg:p-8 bg-background space-y-6 lg:space-y-0 lg:space-x-8" id="faq">
             <div className="relative flex-1 min-h-[300px] lg:min-h-0">
                 <Image
                     fill
