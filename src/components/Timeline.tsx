@@ -1,5 +1,6 @@
 "use client";
 
+import { CalendarIcon } from "@radix-ui/react-icons";
 import { Button, Timeline as FlowbiteTimeline } from "flowbite-react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -58,7 +59,11 @@ export function Timeline({ items = defaultTimelineItems }: TimelineProps) {
                     >
                         <FlowbiteTimeline.Item>
                             <div className="relative">
+<<<<<<< HEAD
                                 <FlowbiteTimeline.Point className="bg-blue-500 text-white" />
+=======
+                                <FlowbiteTimeline.Point className="bg-blue-500 text-white" icon={CalendarIcon} />
+>>>>>>> a38d4eb9190dbc089a7bb7eee6d528f5762bcd15
                             </div>
                             <FlowbiteTimeline.Content className="text-gray-800 p-4 rounded-lg">
                                 <FlowbiteTimeline.Time className="text-gray-600">{item.time}</FlowbiteTimeline.Time>
