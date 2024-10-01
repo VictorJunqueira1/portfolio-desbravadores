@@ -60,8 +60,8 @@ export default function Widget() {
                     <Accordion type="single" collapsible>
                         {faqItems.map((item, index) => (
                             <AccordionItem key={index} value={`item-${index}`}>
-                                <AccordionTrigger>{item.question}</AccordionTrigger>
-                                <AccordionContent>{item.answer}</AccordionContent>
+                                <AccordionTrigger className="border-none bg-gray-200 rounded-md mb-4 font-semibold px-2">{item.question}</AccordionTrigger>
+                                <AccordionContent className="text-gray-600 text-base">{item.answer}</AccordionContent>
                             </AccordionItem>
                         ))}
                     </Accordion>
