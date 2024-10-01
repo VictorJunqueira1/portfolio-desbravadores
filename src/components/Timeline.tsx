@@ -2,7 +2,7 @@
 
 import { Button, Timeline as FlowbiteTimeline } from "flowbite-react";
 import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { useEffect, useState } from "react";
 
 interface TimelineItem {
     time: string;
@@ -36,20 +36,43 @@ const defaultTimelineItems: TimelineItem[] = [
 ];
 
 export function Timeline({ items = defaultTimelineItems }: TimelineProps) {
+    const [inViewIndexes, setInViewIndexes] = useState<number[]>([]);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollPosition = window.scrollY + window.innerHeight;
+            const updatedInViewIndexes: number[] = [];
+
+            items.forEach((_, index) => {
+                const element = document.getElementById(`timeline-item-${index}`);
+                if (element && element.offsetTop < scrollPosition) {
+                    updatedInViewIndexes.push(index);
+                }
+            });
+
+            setInViewIndexes(updatedInViewIndexes);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        handleScroll();
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, [items]);
+
     return (
         <FlowbiteTimeline horizontal>
             {items.map((item, index) => {
-                const { ref, inView } = useInView({
-                    triggerOnce: true,
-                    threshold: 0.2, 
-                });
+                const isInView = inViewIndexes.includes(index);
 
                 return (
                     <motion.div
                         key={index}
-                        ref={ref}
+                        id={`timeline-item-${index}`}
                         initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
+                        animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
                         transition={{ duration: 0.9, delay: index * 0.2 }}
                     >
                         <FlowbiteTimeline.Item>
