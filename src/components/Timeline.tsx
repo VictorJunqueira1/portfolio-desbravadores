@@ -3,7 +3,6 @@
 import { Button, Timeline as FlowbiteTimeline } from "flowbite-react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { useRef } from "react";
 
 interface TimelineItem {
     time: string;
@@ -37,17 +36,18 @@ const defaultTimelineItems: TimelineItem[] = [
 ];
 
 export function Timeline({ items = defaultTimelineItems }: TimelineProps) {
-    const refs = useRef(items.map(() => useInView({ triggerOnce: true, threshold: 0.1 })));
-
     return (
         <FlowbiteTimeline horizontal>
             {items.map((item, index) => {
-                const { ref, inView } = refs.current[index];
+                const { ref, inView } = useInView({
+                    triggerOnce: true,
+                    threshold: 0.2, 
+                });
 
                 return (
                     <motion.div
                         key={index}
-                        ref={ref} // Atribuímos a ref correta
+                        ref={ref}
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
                         transition={{ duration: 0.9, delay: index * 0.2 }}
