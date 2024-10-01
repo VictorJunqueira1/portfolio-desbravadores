@@ -1,6 +1,7 @@
 "use client";
 
 import AdventureSection from "@/components/AdventureSection";
+import FAQ from "@/components/FAQ";
 import HeroSection from "@/components/HeroSection";
 import { NavigationMenuMain } from "@/components/NavigationMenu";
 import { Timeline } from "@/components/Timeline";
@@ -25,6 +26,7 @@ const Page = () => {
         <div className="mx-auto max-w-7xl px-10 xl:px-0 mb-12">
           <Timeline />
           <Widget />
+          <FAQ />
         </div>
       </div>
     </>
