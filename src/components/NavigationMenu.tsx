@@ -25,7 +25,7 @@ import {
 const components = [
     { title: "Início", href: "#home", description: "Volte ao início da página." },
     { title: "Sobre", href: "#about", description: "Conheça mais sobre a história do clube." },
-    { title: "Galeria", href: "#galery", description: "Confira fotos dos momentos mais marcantes vividos do nosso clube." },
+    { title: "Galeria", href: "#gallery", description: "Confira fotos dos momentos mais marcantes vividos do nosso clube." },
     { title: "Contato", href: "#contact", description: "Entre em contato com um de nossos diretores." }
 ]
 

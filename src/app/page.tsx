@@ -8,6 +8,7 @@ import { Timeline } from "@/components/Timeline";
 import Widget from "@/components/Widget";
 import FooterMain from "@/components/Footer";
 import Image from "next/image";
+import Gallery from "@/components/Gallery";
 
 const Page = () => {
   return (
@@ -27,6 +28,11 @@ const Page = () => {
         <div className="mx-auto max-w-7xl px-10 xl:px-0 mb-12">
           <Timeline />
           <Widget />
+        </div>
+        <div className="w-full">
+          <Gallery />
+        </div>
+        <div className="mx-auto max-w-7xl px-10 xl:px-0 mb-12">
           <FAQ />
           <FooterMain />
         </div>

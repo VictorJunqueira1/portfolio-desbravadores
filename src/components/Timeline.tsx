@@ -73,7 +73,7 @@ export function Timeline({ items = defaultTimelineItems }: TimelineProps) {
                         id={`timeline-item-${index}`}
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
-                        transition={{ duration: 0.9, delay: index * 0.2 }}
+                        transition={{ duration: 1, delay: index * 0.5 }}
                     >
                         <FlowbiteTimeline.Item>
                             <div className="relative">
