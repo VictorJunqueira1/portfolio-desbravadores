@@ -3,6 +3,7 @@ import Link from 'next/link';
 import React from 'react';
 import { FaGithub, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import { Phone, Mail, MapPin, CircleArrowRight } from 'lucide-react';
+import { MdEmail } from 'react-icons/md';
 
 const FooterMain: React.FC = () => {
     return (
@@ -24,11 +25,17 @@ const FooterMain: React.FC = () => {
                     <div className="mr-8">
                         <h3 className="font-semibold text-lg mb-2">Rotas</h3>
                         <ul className="mt-4 space-y-4 mb-4">
-                            {['Início', 'Galeria', 'Sobre', 'Eventos', 'Contato'].map((item) => (
-                                <li key={item} className="flex items-center">
-                                    <Link href="#" className="text-black flex items-center hover:text-orange-500 transition-all ease-in-out duration-300">
+                            {[
+                                { name: 'Início', path: '/' },
+                                { name: 'Galeria', path: '/#gallery' },
+                                { name: 'Sobre', path: '/aboutus' },
+                                { name: 'Eventos', path: '/events' },
+                                { name: 'Contato', path: '#contact' },
+                            ].map((item) => (
+                                <li key={item.name} className="flex items-center">
+                                    <Link href={item.path} className="text-black flex items-center hover:text-orange-500 transition-all ease-in-out duration-300">
                                         <CircleArrowRight className="mr-2 h-5 w-5" />
-                                        {item}
+                                        {item.name}
                                     </Link>
                                 </li>
                             ))}
@@ -46,7 +53,7 @@ const FooterMain: React.FC = () => {
                             </li>
                             <li className="flex items-center">
                                 <Mail className="mr-2" />
-                                <Link href="homeadventureclube@gmail.com" className="text-black hover:text-orange-500 transition-all ease-in-out duration-300">
+                                <Link href="mailto:homeadventureclube@gmail.com" className="text-black hover:text-orange-500 transition-all ease-in-out duration-300">
                                     Email
                                     <p className="text-sm text-gray-600">homeadventureclube@gmail.com</p>
                                 </Link>
@@ -70,6 +77,9 @@ const FooterMain: React.FC = () => {
                     </Link>
                     <Link href="#" className="text-gray-600 hover:text-green-500 transition duration-200" aria-label="Diretor do Clube">
                         <FaWhatsapp className="text-2xl" />
+                    </Link>
+                    <Link href="#" className="text-gray-600 hover:text-red-500 transition duration-200" aria-label="Diretor do Clube">
+                        <MdEmail className="text-2xl" />
                     </Link>
                     <Link href="https://github.com/VictorJunqueira1" className="text-gray-600 hover:text-black transition duration-200" aria-label="GitHub">
                         <FaGithub className="text-2xl" />

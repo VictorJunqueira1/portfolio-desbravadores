@@ -14,7 +14,7 @@ const Page = () => {
   return (
     <>
       <div className="bg-white min-h-screen">
-        <header className="mx-auto max-w-7xl">
+        <header className="mx-auto max-w-7xl" id="home">
           <NavigationMenuMain />
         </header>
         <HeroSection />

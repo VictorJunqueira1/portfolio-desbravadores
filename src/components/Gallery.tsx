@@ -10,7 +10,7 @@ const images = [
 
 const Gallery: React.FC = () => {
   return (
-    <section className="flex flex-col items-center justify-center py-12" id='gallery'>
+    <section className="flex flex-col items-center justify-center py-12 px-4" id='gallery'>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
         {/* Imagem ocupando toda a coluna esquerda */}
         <div className="col-span-2">
@@ -46,7 +46,7 @@ const Gallery: React.FC = () => {
       </div>
       <Link href={"gallery"}>
         <button
-          className='mt-2 bg-orange-500 hover:bg-orange-600 rounded-md hover:scale-110 duration-300 transition px-5 py-3 text-white'
+          className='mt-4 bg-orange-500 hover:bg-orange-600 rounded-md hover:scale-110 duration-300 transition px-5 py-3 text-white'
         >
           Ver mais
         </button>
