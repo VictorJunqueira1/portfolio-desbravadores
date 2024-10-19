@@ -17,7 +17,7 @@ const Gallery: React.FC = () => {
           <img
             src={images[0]}
             alt="Image 1"
-            className="object-cover w-full h-full"
+            className="object-cover w-full rounded-lg h-full"
           />
         </div>
 
@@ -27,19 +27,19 @@ const Gallery: React.FC = () => {
             <img
               src={images[1]}
               alt="Image 2"
-              className="object-cover w-full h-full"
+              className="object-cover w-full rounded-md h-full"
             />
             <img
               src={images[2]}
               alt="Image 3"
-              className="object-cover w-full h-full"
+              className="object-cover w-full rounded-md h-full"
             />
           </div>
           <div>
             <img
               src={images[3]}
               alt="Image 4"
-              className="object-cover w-full h-full"
+              className="object-cover w-full rounded-md h-full"
             />
           </div>
         </div>

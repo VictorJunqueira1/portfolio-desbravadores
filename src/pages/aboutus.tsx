@@ -67,8 +67,8 @@ const Aboutus: React.FC = () => {
                 <Timeline />
                 <Guides />
                 <FAQ />
-                <FooterMain />
             </div>
+            <FooterMain />
         </>
     );
 };

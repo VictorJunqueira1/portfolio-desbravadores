@@ -17,7 +17,7 @@ const Widget = () => {
                         fill
                         src={"/images/campori-pic.jpg"}
                         alt="Experiência de Trilhas"
-                        className="rounded-lg object-cover"
+                        className="rounded-md object-cover"
                     />
                 </div>
                 <div className="flex justify-between mt-4">
@@ -26,7 +26,7 @@ const Widget = () => {
                             fill
                             src={"/images/campori-pic.jpg"}
                             alt="Imagem Secundária 1"
-                            className="rounded-lg object-cover"
+                            className="rounded-md object-cover"
                         />
                     </div>
                     <div className="relative w-1/2 h-40 ml-2">
@@ -34,7 +34,7 @@ const Widget = () => {
                             fill
                             src={"/images/campori-pic.jpg"}
                             alt="Imagem Secundária 2"
-                            className="rounded-lg object-cover"
+                            className="rounded-md object-cover"
                         />
                     </div>
                 </div>

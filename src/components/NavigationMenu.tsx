@@ -40,7 +40,7 @@ export const NavigationMenuMain = () => {
     return (
         <div>
             {/* Mobile Menu */}
-            <div className="flex items-center justify-between px-4 py-2 bg-white shadow-md lg:hidden">
+            <div className="flex items-center justify-between px-4 py-[1px] bg-white shadow-md lg:hidden">
                 <Link href="/" className="text-xl font-bold text-gray-900">
                     Home Adventure
                 </Link>
@@ -51,15 +51,15 @@ export const NavigationMenuMain = () => {
                         </span>
                     </SheetTrigger>
                     <SheetContent className="max-h-screen overflow-y-auto">
-                        <SheetHeader>
-                            <SheetTitle>Menu</SheetTitle>
+                        <SheetHeader className="border-b border-gray-300">
+                            <SheetTitle className="text-left mb-2">Home Adventure</SheetTitle>
                         </SheetHeader>
                         <div className="mt-4 space-y-4">
                             {components.map((component) => (
                                 <Link
                                     key={component.title}
                                     href={component.href}
-                                    className="block p-3 text-lg font-semibold text-gray-700 hover:bg-gray-100 rounded-md"
+                                    className="block py-2 text-lg font-semibold text-gray-700 hover:bg-gray-100 rounded-md"
                                 >
                                     {component.title}
                                     <p className="text-sm text-gray-500">{component.description}</p>
@@ -71,7 +71,7 @@ export const NavigationMenuMain = () => {
                                 <Link
                                     key={item.title}
                                     href={item.href}
-                                    className="block p-3 text-lg font-semibold text-gray-700 hover:bg-gray-100 rounded-md"
+                                    className="block py-2 text-lg font-semibold text-gray-700 hover:bg-gray-100 rounded-md"
                                 >
                                     {item.title}
                                     <p className="text-sm text-gray-500">{item.description}</p>
@@ -83,18 +83,16 @@ export const NavigationMenuMain = () => {
             </div>
 
             {/* Desktop Menu */}
-            <div className="hidden lg:flex items-center justify-between mb-8 px-6">
-                <div className="flex-shrink-0">
-                    <Image
-                        width={75}
-                        height={75}
-                        alt="Logo"
-                        src={"/images/logo-home.jpg"}
-                        className="rounded-md mt-4"
-                    />
-                </div>
+            <div className="hidden lg:flex items-center justify-between m-4">
+                <Image
+                    width={70}
+                    height={70}
+                    alt="Logo"
+                    src={"/images/logo-home.jpg"}
+                    className="rounded-md"
+                />
                 <NavigationMenu>
-                    <NavigationMenuList className="flex space-x-4 mt-4 px-10 xl:px-0">
+                    <NavigationMenuList>
                         <NavigationMenuItem>
                             <NavigationMenuTrigger>Home Adventure</NavigationMenuTrigger>
                             <NavigationMenuContent>

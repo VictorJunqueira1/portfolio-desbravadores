@@ -25,17 +25,13 @@ const Page = () => {
           foundationDate={new Date('2019-12-01')}
           image={<Image src="/images/campori-pic.jpg" alt="Imagem Campori 2023" className="rounded-md" width={9999} height={9999} />}
         />
-        <div className="mx-auto max-w-7xl px-10 xl:px-0 mb-12">
+        <div className="mx-auto max-w-7xl px-10 xl:px-0 mb-6">
           <Timeline />
           <Widget />
-        </div>
-        <div className="w-full">
           <Gallery />
-        </div>
-        <div className="mx-auto max-w-7xl px-10 xl:px-0 mb-12">
           <FAQ />
-          <FooterMain />
         </div>
+        <FooterMain />
       </div>
     </>
   );
